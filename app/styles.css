@@ -15,12 +15,21 @@ body {
     #0a0a0b;
 }
 
-button, textarea { font: inherit; }
+button, input, textarea { font: inherit; }
 
 .shell {
   width: min(760px, calc(100% - 32px));
   margin: 0 auto;
   padding: 80px 0;
+}
+
+.shell.compact { max-width: 560px; }
+
+.topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .eyebrow {
@@ -51,9 +60,8 @@ h1 {
 
 label { display: block; margin-bottom: 10px; font-weight: 700; }
 
-textarea {
+input, textarea {
   width: 100%;
-  resize: vertical;
   padding: 14px;
   border: 1px solid #3b3b44;
   border-radius: 12px;
@@ -63,7 +71,9 @@ textarea {
   line-height: 1.5;
 }
 
-textarea:focus { border-color: #8d7cff; box-shadow: 0 0 0 3px rgba(141, 124, 255, 0.16); }
+textarea { resize: vertical; }
+
+input:focus, textarea:focus { border-color: #8d7cff; box-shadow: 0 0 0 3px rgba(141, 124, 255, 0.16); }
 
 button {
   margin-top: 14px;
@@ -78,6 +88,22 @@ button {
 
 button:disabled { cursor: not-allowed; opacity: 0.45; }
 button.secondary { background: #292931; color: #f5f5f5; }
+
+button.textButton {
+  margin: 0;
+  padding: 7px 11px;
+  background: transparent;
+  color: #bdb3ff;
+}
+
+.formMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  color: #777780;
+  font-size: 0.75rem;
+}
 
 .answer { min-height: 220px; }
 .answerHeading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }

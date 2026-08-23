@@ -37,6 +37,7 @@ export function useStreamingAnswer() {
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
+        credentials: 'same-origin',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt }),
         signal: request.signal,
